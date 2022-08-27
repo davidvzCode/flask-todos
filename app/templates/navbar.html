@@ -1,0 +1,30 @@
+<!-- <nav>
+    <ul>
+        <img src="{{ url_for('static', filename='image/luffy.jfif') }}" alt="luffy">
+        <li><a href="{{ url_for('index') }}">go to home</a></li>
+        <li><a href="https://github.com/" target="_blank">go to github</a></li>
+    </ul>
+</nav> -->
+
+<div class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+    <div class="navbar-brand" href="{{ url_for('index') }}">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="navbar-brand" >
+                    <img src="{{ url_for('static', filename='image/luffy.jfif') }}"
+                        style="max-width: 48px"
+                        alt="Platzi logo">
+                </a>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% endif %}
+            <a class="nav-item nav-link active" href="{{ url_for('index') }}">Inicio<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="https://github.com/" target="_blank">Github</a>
+            </div>
+        </div>
+    </div>
+</div>
+
